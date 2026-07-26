@@ -7,4 +7,4 @@ centralWidgetVisible: 1
 orthographicViewHeight: 1
 textFiles: 0 "controllers/nova_controller/nova_controller.py"
 consoles: Console:All:All
-renderingDevicePerspectives: NOVA:camera;1;6.66667;0;0
+renderingDevicePerspectives: NOVA:camera;1;6.34615;0;0

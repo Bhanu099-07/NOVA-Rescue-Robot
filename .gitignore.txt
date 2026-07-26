@@ -20,3 +20,6 @@ controllers/*/*.log
 # Windows files
 Thumbs.db
 Desktop.ini
+
+# Large demo videos
+media/*.mp4
