@@ -1,4 +1,4 @@
-"""NOVA v0.5: Autonomous rescue mission with colour target detection."""
+"""NOVA v0.6: Autonomous rescue mission with mission statistics."""
 
 from controller import Robot
 import random
@@ -83,12 +83,18 @@ turn_direction = "left"
 
 camera_check_counter = 0
 
+# Mission statistics
+mission_start_time = robot.getTime()
+obstacle_count = 0
+escape_count = 0
+
 
 print("================================================")
-print("NOVA v0.5 RESCUE MISSION STARTED")
+print("NOVA v0.6 RESCUE MISSION STARTED")
 print("Autonomous navigation: ENABLED")
 print("Camera colour detection: ENABLED")
 print("Stuck escape system: ENABLED")
+print("Mission statistics: ENABLED")
 print("Targets required: RED, GREEN and BLUE")
 print("================================================")
 
@@ -221,12 +227,27 @@ while robot.step(TIME_STEP) != -1:
             left_motor.setVelocity(0.0)
             right_motor.setVelocity(0.0)
 
+            mission_end_time = robot.getTime()
+            mission_duration = mission_end_time - mission_start_time
+
             print("")
             print("========================================")
             print("MISSION COMPLETE")
             print("ALL 3 RESCUE TARGETS HAVE BEEN LOCATED")
             print("NOVA HAS STOPPED")
             print("========================================")
+
+            print("")
+            print("========== MISSION SUMMARY ==========")
+            print(f"Mission time: {mission_duration:.1f} seconds")
+            print(
+                f"Targets found: "
+                f"{len(found_targets)}/{len(required_targets)}"
+            )
+            print(f"Obstacles detected: {obstacle_count}")
+            print(f"Escape actions: {escape_count}")
+            print("Mission status: SUCCESS")
+            print("=====================================")
 
             break
 
@@ -256,6 +277,8 @@ while robot.step(TIME_STEP) != -1:
 
     # Escape if both front sides are blocked.
     elif both_sides_blocked:
+        escape_count += 1
+
         reverse_steps_remaining = REVERSE_DURATION
         turn_steps_remaining = TRAPPED_TURN_DURATION
         turn_direction = random.choice(["left", "right"])
@@ -270,6 +293,8 @@ while robot.step(TIME_STEP) != -1:
 
     # Normal obstacle response.
     elif obstacle_ahead:
+        obstacle_count += 1
+
         if front_left > front_right:
             turn_direction = "right"
         elif front_right > front_left:
@@ -294,6 +319,6 @@ while robot.step(TIME_STEP) != -1:
         left_speed = FORWARD_SPEED
         right_speed = FORWARD_SPEED
 
-    # These lines are essential: they actually move the wheels.
+    # Apply wheel speeds.
     left_motor.setVelocity(left_speed)
     right_motor.setVelocity(right_speed)

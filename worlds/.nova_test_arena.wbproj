@@ -4,7 +4,8 @@ simulationViewPerspectives: 000000ff00000001000000020000016c000004a0010000000201
 sceneTreePerspectives: 000000ff00000001000000030000001e000000c0000000fa0100000002010000000201
 maximizedDockId: -1
 centralWidgetVisible: 1
-orthographicViewHeight: 1
+projectionMode: ORTHOGRAPHIC
+orthographicViewHeight: 0.904382
 textFiles: 0 "controllers/nova_controller/nova_controller.py"
 consoles: Console:All:All
-renderingDevicePerspectives: NOVA:camera;1;6.34615;0;0
+renderingDevicePerspectives: NOVA:camera;1;5.38462;0;0
