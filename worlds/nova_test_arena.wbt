@@ -1,0 +1,87 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5573444275765806 -0.35013579832239966 0.7528426872743531 4.025148202874621
+  position 0.12956636928284931 0.4187514308873224 1.5521151268615454
+  follow "NOVA"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+E-puck {
+  hidden position_0_0 970.4777345361416
+  hidden position_0_1 905.4696168386438
+  hidden rotation_1 0 1 0 2.8671972304852935
+  hidden rotation_2 0 1 0 0.6909326047833351
+  translation -3.122846429162795e-16 2.1731631536192862e-16 -6.391426108735138e-05
+  rotation -0.03078837723638095 0.9995259255402785 7.202614918141436e-09 7.578087895791085e-09
+  name "NOVA"
+  controller "nova_controller"
+}
+Solid {
+  translation -0.2 0.15 0.06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+      }
+      geometry Cylinder {
+        height 0.12
+        radius 0.04
+      }
+    }
+  ]
+  name "red_rescue_target"
+  boundingObject Cylinder {
+    height 0.12
+    radius 0.04
+  }
+}
+Solid {
+  translation 0.2 0.15 0.06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+      }
+      geometry Cylinder {
+        height 0.12
+        radius 0.04
+      }
+    }
+  ]
+  name "green_rescue_target"
+  boundingObject Cylinder {
+    height 0.12
+    radius 0.04
+  }
+}
+Solid {
+  translation 0 -0.22 0.06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+      }
+      geometry Cylinder {
+        height 0.12
+        radius 0.04
+      }
+    }
+  ]
+  name "blue_rescue_target"
+  boundingObject Cylinder {
+    height 0.12
+    radius 0.04
+  }
+}

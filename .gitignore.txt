@@ -1,0 +1,22 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Webots generated files
+controllers/*/*.exe
+controllers/*/*.class
+controllers/*/*.o
+controllers/*/*.obj
+controllers/*/*.log
+
+# Editor files
+.vscode/
+.idea/
+
+# Windows files
+Thumbs.db
+Desktop.ini
