@@ -38,6 +38,7 @@ GESTURE_COMMANDS = {
     "Thumb_Up": "TURN_RIGHT",
     "Thumb_Down": "TURN_LEFT",
     "Closed_Fist": "AUTONOMOUS_MODE",
+    "ILoveYou": "GESTURE_MODE",
 }
 
 
@@ -168,6 +169,7 @@ def main() -> None:
     print("Thumb up    -> TURN RIGHT")
     print("Thumb down  -> TURN LEFT")
     print("Closed fist -> AUTONOMOUS MODE")
+    print("I Love You  -> GESTURE MODE")
     print(f"Sending commands to UDP port {UDP_PORT}")
     print("Press Q inside the camera window to exit")
     print("==========================================")
